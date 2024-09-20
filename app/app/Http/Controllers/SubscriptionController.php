@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Services\SubscriptionService;
+use App\Providers\SubscriptionService;
 
 class SubscriptionController extends Controller
 {
@@ -17,10 +17,10 @@ class SubscriptionController extends Controller
     public function subscribe(Request $request)
     {
         $email = $request->input('email');
-        $adUrl = $request->input('adUrl');
+        $adUrl = $request->input('listing_url');
         
-        $this->subscriptionService->subscribe($email, $adUrl);
+        $price = $this->subscriptionService->subscribe($email, $adUrl);
 
-        return response()->json(['message' => 'Subscription created successfully!']);
+        return response()->json(['message' => $price]);
     }
 }

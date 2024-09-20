@@ -16,8 +16,8 @@ class CreateAdvertismentsTable extends Migration
         Schema::create('advertisments', function (Blueprint $table) {
             $table->id();
             $table->string('url')->unique();
-            $table->decimal('price', 10, 2);
-            $table->timestamps();
+            $table->decimal('price', 10, 2)->nullable();
+            $table->timestamps();  // Add timestamps columns
         });
     }
 

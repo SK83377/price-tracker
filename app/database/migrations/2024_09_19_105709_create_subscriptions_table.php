@@ -26,7 +26,7 @@ class CreateSubscriptionsTable extends Migration
                   ->onDelete('cascade')
                   ->onUpdate('cascade');
             
-            $table->timestamps();
+            $table->timestamps();  // Add timestamps columns
         });
     }
 
