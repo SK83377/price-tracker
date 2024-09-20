@@ -1,0 +1,16 @@
+# Laravel & PHP
+/vendor
+/node_modules
+/.env
+.env.*
+
+# Logs
+/storage/logs
+/storage/*.key
+
+# Docker
+docker-compose.override.yml
+
+# IDEs
+/.idea
+/.vscode
