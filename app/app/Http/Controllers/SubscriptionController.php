@@ -23,4 +23,12 @@ class SubscriptionController extends Controller
 
         return response()->json(['message' => $price]);
     }
+
+    public function refreshPrices(Request $request)
+    {
+        
+        $price = $this->subscriptionService->refreshPrices();
+
+        return response()->json(['message' => 'refreshed']);
+    }
 }
